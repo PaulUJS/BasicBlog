@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Create an account {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="username" name="username"
+               placeholder="Username" class="form-control"
+               value="{{ request.form['username'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password"
+               placeholder="Password" class="form-control"
+               value="{{ request.form['password'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="Display name">Display name</label>
+        <input type="Display name" name="Display name"
+               placeholder="Display name" class="form-control"
+               value="{{ request.form['Display-name'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-info">Submit</button>
+    </div>
+</form>
+<div>
+<p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Sign In here</a></p>
+</div>
+{% endblock %}
